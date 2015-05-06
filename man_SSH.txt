@@ -1,0 +1,28 @@
+man SSH
+
+I used man to query SSH. Man give me an explanation of the queried command its various options 
+and explanations for those options. 
+
+ssh (SSH client) is a program for logging into a remote machine and for executing com-
+     mands on a remote machine.  It is intended to replace rlogin and rsh, and provide secure
+     encrypted communications between two untrusted hosts over an insecure network.  X11 con-
+     nections and arbitrary TCP ports can also be forwarded over the secure channel.
+
+     ssh connects and logs into the specified hostname (with optional user name).  The user
+     must prove his/her identity to the remote machine using one of several methods depending
+     on the protocol version used (see below).
+
+AUTHORS
+     OpenSSH is a derivative of the original and free ssh 1.2.12 release by Tatu Ylonen.
+     Aaron Campbell, Bob Beck, Markus Friedl, Niels Provos, Theo de Raadt and Dug Song removed
+     many bugs, re-added newer features and created OpenSSH.  Markus Friedl contributed the
+     support for SSH protocol versions 1.5 and 2.0.
+
+BSD                               May 4, 2015                              BSD
+
+There was additional information. I shared the snippets above to illustrate my findings using man.
+
+Randy Mitchell
+
+
+     
