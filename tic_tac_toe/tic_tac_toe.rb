@@ -1,5 +1,6 @@
 require 'pry'
 
+toy = [1, 2, 3, 4]
 board = (1..9).to_a
 
 def playgame?(board)
@@ -9,7 +10,7 @@ def playgame?(board)
   answer = gets.chomp
     if answer == "Yes"
       puts "Great! Why dont you start first."
-      print_board(board)
+      print_board("jerks", "cookies")
     elsif answer == "No"
       puts "Ok #{name}. Perhaps another time. Goodbye :-)"
     elsif answer == "What game?"
@@ -17,6 +18,7 @@ def playgame?(board)
     else
       nil
     end
+    print_board("beers", "dinner")
     puts 'Please '
 end
 
@@ -26,15 +28,36 @@ def print_board(board)
   puts "#{board[6]} #{board[7]} #{board[8]}"
 end
 
-def choose_move(board)
-  print_board(board)
-  puts "Please choose a square to move to:"
-  gets.chomp.to_i
+def game_over?(board)
+  false
 end
 
-def game # Where is board coming from?
-  move = choose_move(board)
-  board[move] = current_player
+def choose_random(board)
+end
+
+def tic_tac_toe(board)
+  current_player = 'X'
+  until game_over?(board)
+    ## The current player's turn
+    
+    if current_player == 'X'
+      print_board(board)
+      puts "Please choose a square to move to:"
+      move = gets.chomp.to_i - 1
+    else
+      puts "Computer's turn now"
+      move = board.sample # choose_random(board)
+    end
+    # update board with move
+    board[move] = current_player
+
+    ## My turn is done. Set the current player for next turn.
+    if current_player == 'X'
+      current_player = 'O'
+    else
+      current_player = 'X'
+    end
+  end
 end
 
 def winning
@@ -46,7 +69,8 @@ end
 def playagain?
 
 end
-playgame?(board)
+
+tic_tac_toe(board)
 
 
 
