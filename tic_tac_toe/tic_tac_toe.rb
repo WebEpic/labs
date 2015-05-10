@@ -1,6 +1,5 @@
 require 'pry'
 
-toy = [1, 2, 3, 4]
 board = (1..9).to_a
 
 def playgame?(board)
@@ -33,6 +32,7 @@ def game_over?(board)
 end
 
 def choose_random(board)
+
 end
 
 def tic_tac_toe(board)
