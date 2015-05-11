@@ -9,16 +9,13 @@ def playgame?(board)
   answer = gets.chomp
     if answer == "Yes"
       puts "Great! Why dont you start first."
-      print_board("jerks", "cookies")
     elsif answer == "No"
       puts "Ok #{name}. Perhaps another time. Goodbye :-)"
     elsif answer == "What game?"
       puts "Tic Tac Toe of course"
     else
-      nil
+      puts "Lets Play! :-)"
     end
-    print_board("beers", "dinner")
-    puts 'Please '
 end
 
 def print_board(board)
@@ -67,7 +64,7 @@ end
 def playagain?
 
 end
-
+playgame?(board)
 tic_tac_toe(board)
 
 
