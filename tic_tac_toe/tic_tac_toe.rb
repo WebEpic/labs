@@ -19,9 +19,9 @@ def playgame?(board)
 end
 
 def print_board(board)
-  puts "#{board[0]} #{board[1]} #{board[2]}"
-  puts "#{board[3]} #{board[4]} #{board[5]}"
-  puts "#{board[6]} #{board[7]} #{board[8]}"
+  puts "#{board[0]} | #{board[1]} | #{board[2]}"
+  puts "#{board[3]} | #{board[4]} | #{board[5]}"
+  puts "#{board[6]} | #{board[7]} | #{board[8]}"
 end
 
 def game_over?(board)
@@ -43,11 +43,11 @@ def tic_tac_toe(board)
   until player_1 == win_combos || player_2 == win_combos do
     print_board(board)
       if turn_count % 2 == 0
-        puts "Player 1, please choose a square:"
+        puts "Player 1, please choose a numbered square:"
         move = gets.chomp.to_i - 1
         board[move] = player_1
       else
-        puts "Player 2, please choose a square:"
+        puts "Player 2, please choose a numbered square:"
         move = gets.chomp.to_i - 1
         board[move] = player_2
       end
