@@ -15,7 +15,7 @@ def playgame?(board)
     tic_tac_toe(board)
   elsif answer == "No"
     puts "Ok #{name}. Perhaps another time. Goodbye :-)"
-  else answer == "What game?"
+  elsif answer == "What game?"
     puts "Tic Tac Toe of course"
     puts "Lets Play! :-)"
     tic_tac_toe(board)
@@ -27,7 +27,8 @@ def tic_tac_toe(board)
   player_2 = 'O'
   turn_count = 0              
 
-  until player_1 == WINNING || player_2 == WINNING do
+  # until player_1 == WINNING || player_2 == WINNING do
+  until game_over?(board)
     if turn_count % 2 == 0
       puts "Player 1, please choose a numbered square:"
       move = choose_move(board)
@@ -38,6 +39,20 @@ def tic_tac_toe(board)
       board[move] = player_2
     end
     turn_count += 1  
+  end
+  print_board(board)
+  goodbye(board)
+  playagain?(board)
+
+  # puts "#{win?(board)} won!! Congratulations :)"
+ 
+end
+
+def goodbye(board)
+  if draw?(board)
+    puts "It's a draw!"
+  elsif win?(board)
+    puts "You won!!"
   end
 end
 
@@ -65,22 +80,36 @@ end
 
 def win?(board)
   WINNING.any? do |x, y, z|
-    board[x] == board[y] && board[y] == board[z]
+    if board[x] == board[y] && board[y] == board[z]
+       return board[x]
+    end
   end
 end
 
+def draw?(board)
+ board.all? {|x| x.is_a? String} && !win?(board)
+end
+  
+
 def game_over?(board)
-  win?(board) || print_board(board)
+  win?(board) || draw?(board)
 end
 
-def playagain?
+def playagain?(board)
   puts "Would you like to play again? (Yes or No)"
     user_answer = gets.chomp
+    if user_answer == "Yes" || "yes"
+      playgame?(board)
+    else
+      puts "Ok, perhaps another time."
+    end
 end
+
+binding.pry
 
 playgame?(board)
 
-binding.pry
+
 
 # comp1 = "Hal"
 # comp2 = "Jarvis"
