@@ -1,4 +1,4 @@
-require 'pry'
+#require 'pry'
 
 board = (1..9).to_a
 WINNING = [[0,1,2], [2,3,4], [5,6,8],
@@ -10,10 +10,10 @@ def playgame?(board)
   name = gets.chomp
   puts "Hi #{name}. Would you like to play a game?"
   answer = gets.chomp
-  if answer == "Yes"
+  if answer.downcase == "yes"
     puts "Great! Why dont you start first."
     tic_tac_toe(board)
-  elsif answer == "No"
+  elsif answer.downcase == "no"
     puts "Ok #{name}. Perhaps another time. Goodbye :-)"
   elsif answer == "What game?"
     puts "Tic Tac Toe of course"
@@ -98,14 +98,14 @@ end
 def playagain?(board)
   puts "Would you like to play again? (Yes or No)"
     user_answer = gets.chomp
-    if user_answer == "Yes" || "yes"
+    if answer.downcase == "yes"
       playgame?(board)
     else
       puts "Ok, perhaps another time."
     end
 end
 
-binding.pry
+#binding.pry
 
 playgame?(board)
 
