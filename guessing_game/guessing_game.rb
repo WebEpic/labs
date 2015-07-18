@@ -6,7 +6,7 @@ rand_num = rand(100)
   until rand_num == my_num
     if my_num > rand_num
   	  puts 'You guessed too high!'
-    elsif my_num < rand_num
+    else my_num < rand_num
       puts 'You guessed too low!'		
     end
     puts 'Guess Again'
