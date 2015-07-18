@@ -8,7 +8,7 @@ rand_num = rand(100)
 
     if my_num > rand_num
   	  puts 'You guessed too high!'
-    elsif my_num < rand_num
+    else my_num < rand_num
       puts 'You guessed too low!'		
     end
     puts 'Guess Again'
@@ -26,11 +26,6 @@ def playagain
     puts "Would you like to play again? (Yes or No)"
     user_answer = gets.chomp
   end
-    # if user_answer == 'Yes' || user_answer == 'yes'
-    #   playgame
-    #   playagain
-    # elsif user_answer == 'No' || user_answer == 'no'
-    #   puts 'Ok, Perhaps another time. Take care! :-)'
 end
 playagain
     
