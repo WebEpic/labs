@@ -1,6 +1,6 @@
 rand_num = rand(100)
 
-  puts 'Enter Number'
+  puts 'Guess a number between 0-100!'
   my_num = gets.chomp.to_i
 
   until rand_num == my_num
