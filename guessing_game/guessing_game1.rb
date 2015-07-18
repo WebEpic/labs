@@ -1,7 +1,7 @@
 def playgame
 
 rand_num = rand(100)
-  puts 'Guess a number!'
+  puts 'Guess a number between 0-100!'
   
   my_num = gets.chomp.to_i
   until rand_num == my_num
@@ -21,7 +21,7 @@ def playagain
   puts 'Would you like to play a game?'
   puts 'Yes or No?'
   user_answer = gets.chomp
-  until ['No', 'no'].include? user_answer
+  until 'no'.downcase.include? user_answer
     playgame
     puts "Would you like to play again? (Yes or No)"
     user_answer = gets.chomp
