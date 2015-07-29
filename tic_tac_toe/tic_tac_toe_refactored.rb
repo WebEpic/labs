@@ -1,5 +1,3 @@
-#require 'pry'
-
 board = (1..9).to_a
 WINNING = [[0,1,2], [2,3,4], [5,6,8],
           [0,3,6], [1,4,7], [2,5,8],
@@ -105,11 +103,4 @@ def playagain?(board)
     end
 end
 
-#binding.pry
-
 playgame?(board)
-
-
-
-# comp1 = "Hal"
-# comp2 = "Jarvis"
