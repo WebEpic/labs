@@ -1,5 +1,3 @@
-require 'pry'
-
 board = (1..9).to_a
 
 def playgame?(board)
@@ -66,11 +64,3 @@ def playagain?
 end
 playgame?(board)
 tic_tac_toe(board)
-
-
-
-# comp1 = "Hal"
-# comp2 = "Jarvis"
-
-
-binding.pry
